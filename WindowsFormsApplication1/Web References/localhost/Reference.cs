@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace ConsoleApplication1.localhost {
+namespace WindowsFormsApplication1.localhost {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
@@ -29,15 +29,13 @@ namespace ConsoleApplication1.localhost {
     [System.Web.Services.WebServiceBindingAttribute(Name="WebService1Soap", Namespace="http://tempuri.org/")]
     public partial class WebService1 : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
-        private System.Threading.SendOrPostCallback AnswerOperationCompleted;
-        
         private System.Threading.SendOrPostCallback QuestionsOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
         public WebService1() {
-            this.Url = global::ConsoleApplication1.Properties.Settings.Default.ConsoleApplication1_localhost_WebService1;
+            this.Url = global::WindowsFormsApplication1.Properties.Settings.Default.WindowsFormsApplication1_localhost_WebService1;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
@@ -72,41 +70,7 @@ namespace ConsoleApplication1.localhost {
         }
         
         /// <remarks/>
-        public event AnswerCompletedEventHandler AnswerCompleted;
-        
-        /// <remarks/>
         public event QuestionsCompletedEventHandler QuestionsCompleted;
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Answer", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string Answer(int a, int id) {
-            object[] results = this.Invoke("Answer", new object[] {
-                        a,
-                        id});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void AnswerAsync(int a, int id) {
-            this.AnswerAsync(a, id, null);
-        }
-        
-        /// <remarks/>
-        public void AnswerAsync(int a, int id, object userState) {
-            if ((this.AnswerOperationCompleted == null)) {
-                this.AnswerOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAnswerOperationCompleted);
-            }
-            this.InvokeAsync("Answer", new object[] {
-                        a,
-                        id}, this.AnswerOperationCompleted, userState);
-        }
-        
-        private void OnAnswerOperationCompleted(object arg) {
-            if ((this.AnswerCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.AnswerCompleted(this, new AnswerCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Questions", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -155,32 +119,6 @@ namespace ConsoleApplication1.localhost {
                 return true;
             }
             return false;
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.33440")]
-    public delegate void AnswerCompletedEventHandler(object sender, AnswerCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.33440")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class AnswerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal AnswerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
         }
     }
     

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ConsoleApplication1.Properties {
+namespace WindowsFormsApplication1.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -25,23 +25,11 @@ namespace ConsoleApplication1.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;AttachDbFilename=\"C:\\Users\\Bartosz\\Documents\\Visual S" +
-            "tudio 2013\\Projects\\WebApplication6\\WebApplication6\\App_Data\\Database1.mdf\";Inte" +
-            "grated Security=True")]
-        public string Database1ConnectionString {
-            get {
-                return ((string)(this["Database1ConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
         [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:57170/WebService1.asmx")]
-        public string ConsoleApplication1_localhost_WebService1 {
+        public string WindowsFormsApplication1_localhost_WebService1 {
             get {
-                return ((string)(this["ConsoleApplication1_localhost_WebService1"]));
+                return ((string)(this["WindowsFormsApplication1_localhost_WebService1"]));
             }
         }
     }

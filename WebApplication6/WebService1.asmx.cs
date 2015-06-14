@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace WebApplication6
 {
+  
+   
+    
     /// <summary>
     /// Summary description for WebService1
     /// </summary>
@@ -16,18 +21,24 @@ namespace WebApplication6
     // [System.Web.Script.Services.ScriptService]
     public class WebService1 : System.Web.Services.WebService
     {
+        
+        
+         int[] Answers={1, 1, 1, 2, 2};   
+
+
 
         [WebMethod]
-        public string HelloWorld()
+        public string Questions(int a, int id)
         {
-            return "Hello World";
+             
+           
+
+            if (a == Answers[id]) return "True"+Answers[id];
+            else return "False"+Answers[id];
         }
 
-        [WebMethod]
-        public int Add(int a, int b)
-        {
-            return (a + b);
-        }
+        
+      
         
     }
 }

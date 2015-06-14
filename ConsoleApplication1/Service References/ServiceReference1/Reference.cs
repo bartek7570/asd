@@ -15,60 +15,34 @@ namespace ConsoleApplication1.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.WebService1Soap")]
     public interface WebService1Soap {
         
-        // CODEGEN: Generating message contract since element name HelloWorldResult from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        ConsoleApplication1.ServiceReference1.HelloWorldResponse HelloWorld(ConsoleApplication1.ServiceReference1.HelloWorldRequest request);
+        // CODEGEN: Generating message contract since element name AnswerResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Answer", ReplyAction="*")]
+        ConsoleApplication1.ServiceReference1.AnswerResponse Answer(ConsoleApplication1.ServiceReference1.AnswerRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        System.Threading.Tasks.Task<ConsoleApplication1.ServiceReference1.HelloWorldResponse> HelloWorldAsync(ConsoleApplication1.ServiceReference1.HelloWorldRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Answer", ReplyAction="*")]
+        System.Threading.Tasks.Task<ConsoleApplication1.ServiceReference1.AnswerResponse> AnswerAsync(ConsoleApplication1.ServiceReference1.AnswerRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Add", ReplyAction="*")]
-        int Add(int a, int b);
+        // CODEGEN: Generating message contract since element name QuestionsResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Questions", ReplyAction="*")]
+        ConsoleApplication1.ServiceReference1.QuestionsResponse Questions(ConsoleApplication1.ServiceReference1.QuestionsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Add", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> AddAsync(int a, int b);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Questions", ReplyAction="*")]
+        System.Threading.Tasks.Task<ConsoleApplication1.ServiceReference1.QuestionsResponse> QuestionsAsync(ConsoleApplication1.ServiceReference1.QuestionsRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWorldRequest {
+    public partial class AnswerRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorld", Namespace="http://tempuri.org/", Order=0)]
-        public ConsoleApplication1.ServiceReference1.HelloWorldRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Answer", Namespace="http://tempuri.org/", Order=0)]
+        public ConsoleApplication1.ServiceReference1.AnswerRequestBody Body;
         
-        public HelloWorldRequest() {
+        public AnswerRequest() {
         }
         
-        public HelloWorldRequest(ConsoleApplication1.ServiceReference1.HelloWorldRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class HelloWorldRequestBody {
-        
-        public HelloWorldRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWorldResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorldResponse", Namespace="http://tempuri.org/", Order=0)]
-        public ConsoleApplication1.ServiceReference1.HelloWorldResponseBody Body;
-        
-        public HelloWorldResponse() {
-        }
-        
-        public HelloWorldResponse(ConsoleApplication1.ServiceReference1.HelloWorldResponseBody Body) {
+        public AnswerRequest(ConsoleApplication1.ServiceReference1.AnswerRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -77,16 +51,126 @@ namespace ConsoleApplication1.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class HelloWorldResponseBody {
+    public partial class AnswerRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string HelloWorldResult;
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int a;
         
-        public HelloWorldResponseBody() {
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int id;
+        
+        public AnswerRequestBody() {
         }
         
-        public HelloWorldResponseBody(string HelloWorldResult) {
-            this.HelloWorldResult = HelloWorldResult;
+        public AnswerRequestBody(int a, int id) {
+            this.a = a;
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AnswerResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AnswerResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ConsoleApplication1.ServiceReference1.AnswerResponseBody Body;
+        
+        public AnswerResponse() {
+        }
+        
+        public AnswerResponse(ConsoleApplication1.ServiceReference1.AnswerResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AnswerResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string AnswerResult;
+        
+        public AnswerResponseBody() {
+        }
+        
+        public AnswerResponseBody(string AnswerResult) {
+            this.AnswerResult = AnswerResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class QuestionsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Questions", Namespace="http://tempuri.org/", Order=0)]
+        public ConsoleApplication1.ServiceReference1.QuestionsRequestBody Body;
+        
+        public QuestionsRequest() {
+        }
+        
+        public QuestionsRequest(ConsoleApplication1.ServiceReference1.QuestionsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class QuestionsRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int a;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int id;
+        
+        public QuestionsRequestBody() {
+        }
+        
+        public QuestionsRequestBody(int a, int id) {
+            this.a = a;
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class QuestionsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="QuestionsResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ConsoleApplication1.ServiceReference1.QuestionsResponseBody Body;
+        
+        public QuestionsResponse() {
+        }
+        
+        public QuestionsResponse(ConsoleApplication1.ServiceReference1.QuestionsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class QuestionsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string QuestionsResult;
+        
+        public QuestionsResponseBody() {
+        }
+        
+        public QuestionsResponseBody(string QuestionsResult) {
+            this.QuestionsResult = QuestionsResult;
         }
     }
     
@@ -118,34 +202,57 @@ namespace ConsoleApplication1.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        ConsoleApplication1.ServiceReference1.HelloWorldResponse ConsoleApplication1.ServiceReference1.WebService1Soap.HelloWorld(ConsoleApplication1.ServiceReference1.HelloWorldRequest request) {
-            return base.Channel.HelloWorld(request);
+        ConsoleApplication1.ServiceReference1.AnswerResponse ConsoleApplication1.ServiceReference1.WebService1Soap.Answer(ConsoleApplication1.ServiceReference1.AnswerRequest request) {
+            return base.Channel.Answer(request);
         }
         
-        public string HelloWorld() {
-            ConsoleApplication1.ServiceReference1.HelloWorldRequest inValue = new ConsoleApplication1.ServiceReference1.HelloWorldRequest();
-            inValue.Body = new ConsoleApplication1.ServiceReference1.HelloWorldRequestBody();
-            ConsoleApplication1.ServiceReference1.HelloWorldResponse retVal = ((ConsoleApplication1.ServiceReference1.WebService1Soap)(this)).HelloWorld(inValue);
-            return retVal.Body.HelloWorldResult;
+        public string Answer(int a, int id) {
+            ConsoleApplication1.ServiceReference1.AnswerRequest inValue = new ConsoleApplication1.ServiceReference1.AnswerRequest();
+            inValue.Body = new ConsoleApplication1.ServiceReference1.AnswerRequestBody();
+            inValue.Body.a = a;
+            inValue.Body.id = id;
+            ConsoleApplication1.ServiceReference1.AnswerResponse retVal = ((ConsoleApplication1.ServiceReference1.WebService1Soap)(this)).Answer(inValue);
+            return retVal.Body.AnswerResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ConsoleApplication1.ServiceReference1.HelloWorldResponse> ConsoleApplication1.ServiceReference1.WebService1Soap.HelloWorldAsync(ConsoleApplication1.ServiceReference1.HelloWorldRequest request) {
-            return base.Channel.HelloWorldAsync(request);
+        System.Threading.Tasks.Task<ConsoleApplication1.ServiceReference1.AnswerResponse> ConsoleApplication1.ServiceReference1.WebService1Soap.AnswerAsync(ConsoleApplication1.ServiceReference1.AnswerRequest request) {
+            return base.Channel.AnswerAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ConsoleApplication1.ServiceReference1.HelloWorldResponse> HelloWorldAsync() {
-            ConsoleApplication1.ServiceReference1.HelloWorldRequest inValue = new ConsoleApplication1.ServiceReference1.HelloWorldRequest();
-            inValue.Body = new ConsoleApplication1.ServiceReference1.HelloWorldRequestBody();
-            return ((ConsoleApplication1.ServiceReference1.WebService1Soap)(this)).HelloWorldAsync(inValue);
+        public System.Threading.Tasks.Task<ConsoleApplication1.ServiceReference1.AnswerResponse> AnswerAsync(int a, int id) {
+            ConsoleApplication1.ServiceReference1.AnswerRequest inValue = new ConsoleApplication1.ServiceReference1.AnswerRequest();
+            inValue.Body = new ConsoleApplication1.ServiceReference1.AnswerRequestBody();
+            inValue.Body.a = a;
+            inValue.Body.id = id;
+            return ((ConsoleApplication1.ServiceReference1.WebService1Soap)(this)).AnswerAsync(inValue);
         }
         
-        public int Add(int a, int b) {
-            return base.Channel.Add(a, b);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ConsoleApplication1.ServiceReference1.QuestionsResponse ConsoleApplication1.ServiceReference1.WebService1Soap.Questions(ConsoleApplication1.ServiceReference1.QuestionsRequest request) {
+            return base.Channel.Questions(request);
         }
         
-        public System.Threading.Tasks.Task<int> AddAsync(int a, int b) {
-            return base.Channel.AddAsync(a, b);
+        public string Questions(int a, int id) {
+            ConsoleApplication1.ServiceReference1.QuestionsRequest inValue = new ConsoleApplication1.ServiceReference1.QuestionsRequest();
+            inValue.Body = new ConsoleApplication1.ServiceReference1.QuestionsRequestBody();
+            inValue.Body.a = a;
+            inValue.Body.id = id;
+            ConsoleApplication1.ServiceReference1.QuestionsResponse retVal = ((ConsoleApplication1.ServiceReference1.WebService1Soap)(this)).Questions(inValue);
+            return retVal.Body.QuestionsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ConsoleApplication1.ServiceReference1.QuestionsResponse> ConsoleApplication1.ServiceReference1.WebService1Soap.QuestionsAsync(ConsoleApplication1.ServiceReference1.QuestionsRequest request) {
+            return base.Channel.QuestionsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ConsoleApplication1.ServiceReference1.QuestionsResponse> QuestionsAsync(int a, int id) {
+            ConsoleApplication1.ServiceReference1.QuestionsRequest inValue = new ConsoleApplication1.ServiceReference1.QuestionsRequest();
+            inValue.Body = new ConsoleApplication1.ServiceReference1.QuestionsRequestBody();
+            inValue.Body.a = a;
+            inValue.Body.id = id;
+            return ((ConsoleApplication1.ServiceReference1.WebService1Soap)(this)).QuestionsAsync(inValue);
         }
     }
 }
