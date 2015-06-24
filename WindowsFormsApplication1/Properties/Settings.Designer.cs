@@ -26,7 +26,7 @@ namespace WindowsFormsApplication1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:57170/WebService1.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://192.168.0.101:4444/WebService1.asmx")]
         public string WindowsFormsApplication1_localhost_WebService1 {
             get {
                 return ((string)(this["WindowsFormsApplication1_localhost_WebService1"]));

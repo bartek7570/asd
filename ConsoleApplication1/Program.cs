@@ -10,6 +10,7 @@ using System.Data;
 
 namespace ConsoleApplication1
 {
+    /// Struktura zawierająca treść pytania, i dwie możliwe odpowiedzi
 
     struct Question
     {
@@ -106,11 +107,7 @@ namespace ConsoleApplication1
                 Console.WriteLine(" ");
                 i++;
             }
-            
-
-
-            
-            //Console.Write("2 + 4 =", myMathService.Add(2, 4));
+                        
             System.Console.ReadKey();
         }
     }

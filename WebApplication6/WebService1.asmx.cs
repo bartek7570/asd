@@ -21,11 +21,16 @@ namespace WebApplication6
     // [System.Web.Script.Services.ScriptService]
     public class WebService1 : System.Web.Services.WebService
     {
-        
+        /// 
+        /// Tablica poprawnych odpowiedzi
+        /// 
         
          int[] Answers={1, 1, 1, 2, 2};   
 
-
+        /// 
+        /// metoda pozwalająca na sprawdzenie poprawności odpowiedzi podanej przez klienta
+        /// 
+        
 
         [WebMethod]
         public string Questions(int a, int id)
